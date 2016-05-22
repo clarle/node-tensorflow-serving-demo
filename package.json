@@ -1,0 +1,23 @@
+{
+  "name": "node-tensorflow-serving-example",
+  "version": "1.0.0",
+  "description": "Example app combining Express and TensorFlow Serving",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clarle/node-tensorflow-serving-example.git"
+  },
+  "keywords": [
+    "tensorflow"
+  ],
+  "author": "Clarence Leung <contact@clarle.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clarle/node-tensorflow-serving-example/issues"
+  },
+  "homepage": "https://github.com/clarle/node-tensorflow-serving-example#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "grpc": "^0.14.1"
+  }
+}
