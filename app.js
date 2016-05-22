@@ -16,5 +16,10 @@ const SAMPLE_DATA = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 
 client.classify({image_data: SAMPLE_DATA}, (err, mnistResponse) => {
   console.log(err);
-  console.log(mnistResponse);
+  if (!err && mnistResponse) {
+    const results = mnistResponse.value;
+    results.forEach((result, digit) => {
+      console.log(`This image has a ${Math.ceil(result * 10000) / 100}% chance of being the digit ${digit}.`);
+    });
+  }
 });
