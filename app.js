@@ -20,8 +20,8 @@ const port = process.env.PORT || config.PORT || 3000;
 app.use(bodyParser.json());
 
 // Express routes
-app.post('/classify', (req, res) => {
-  // Snake-case only because the gRPC protocol requires it
+app.post('/classify', (req, res, next) => {
+  // Snake-case because this gRPC protocol requires it (see `protos/mnist_inference.proto`)
   const image_data = req.body.image;
   client.classify({ image_data }, (err, mnistResponse) => {
     if (err) {
@@ -29,6 +29,7 @@ app.post('/classify', (req, res) => {
       next(err);
     } else {
       const results = mnistResponse ? mnistResponse.value : [];
+      // Get the digit-classification percentages rounded to nearest hundreths place
       const percentages = results.map((result) => Math.ceil(result * 10000) / 100);
       res.json({ percentages });
     }
