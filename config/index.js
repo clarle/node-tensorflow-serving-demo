@@ -1,3 +1,4 @@
 module.exports = {
-  TENSORFLOW_SERVING_HOST: ''
+  TENSORFLOW_SERVING_HOST: '',
+  PORT: ''
 };
