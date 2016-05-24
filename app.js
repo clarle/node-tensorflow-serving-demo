@@ -13,8 +13,8 @@ const MnistService = proto.MnistService;
 const client = new MnistService(config.TENSORFLOW_SERVING_HOST, grpc.credentials.createInsecure());
 
 // Express application initialization
-const app  = express();
-const port = process.env.PORT || config.PORT || 3000;
+const app  = module.exports = express();
+const port = process.env.PORT || 3000;
 
 // Express middleware
 app.use(bodyParser.json());

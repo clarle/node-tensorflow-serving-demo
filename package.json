@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Example app combining Express and TensorFlow Serving",
   "main": "app.js",
+  "scripts": {
+    "test": "mocha test/integration"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/clarle/node-tensorflow-serving-example.git"
@@ -20,5 +23,10 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "grpc": "^0.14.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.1",
+    "supertest": "^1.2.0"
   }
 }
