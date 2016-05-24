@@ -1,4 +1,4 @@
-# node-tensorflow-serving-example
+# node-tensorflow-serving-demo
 
 Example app combining Express and TensorFlow Serving. Work in progress.
 
